@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Remover</title>
+  </head>
+  <body>
+    <h1>Background Remover</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" required />
+      <button type="submit">Remove Background</button>
+    </form>
+    <div id="result">
+      {% if output_image %}
+      <h2>Result:</h2>
+      <img src="{{ output_image }}" alt="Processed Image" />
+      {% endif %}
+    </div>
+  </body>
+</html>
