@@ -1,15 +1,16 @@
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, send_file, send_from_directory, render_template, jsonify
 from rembg import remove
 from PIL import Image
 from flask_cors import CORS
 import io
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='build', static_url_path='/')
 CORS(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+   return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/upload', methods=['POST'])
 def upload():
