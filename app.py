@@ -26,4 +26,4 @@ def upload():
         return send_file(output_io, mimetype='image/png')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=1234,debug=True)

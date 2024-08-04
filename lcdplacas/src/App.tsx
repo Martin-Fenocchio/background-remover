@@ -21,7 +21,7 @@ function App() {
 
       try {
         const response = await axios.post(
-          "http://127.0.0.1:5000/upload",
+          "http://localhost:1234/upload",
           formData,
           {
             responseType: "blob",
@@ -68,6 +68,7 @@ function App() {
             type="file"
             name="file"
             onChange={handleFileChange}
+            disabled={isLoading}
             ref={fileInputRef}
           />
           <div className="upload-button" data-loading={isLoading}>
